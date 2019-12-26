@@ -26,11 +26,11 @@ export class ListSubjectComponent implements OnInit {
     }
 
     getListSubject() {
-        this.subjectApi.getListSubject(this.subjectName).then((value: any) => {
-            if (value.success == true) {
-                this.listSubject = value.subjects;
-            }
-        });
+        // this.subjectApi.getListSubject(this.subjectName).then((value: any) => {
+        //     if (value.success == true) {
+        //         this.listSubject = value.subjects;
+        //     }
+        // });
 
     }
 

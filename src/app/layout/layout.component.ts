@@ -8,7 +8,7 @@ import {UserInformationService} from '../services/user-information.service';
     styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
-    isVisible;
+    isVisible = true;
 
     constructor(private  router: Router, private  userInformationService: UserInformationService) {
     }
@@ -32,7 +32,8 @@ export class LayoutComponent implements OnInit {
 
     isAdmin() {
 
-        return this.userInformationService.isAdmin();
+        // return this.userInformationService.isAdmin();
+        return true;
     }
 
     isUser() {
@@ -40,11 +41,13 @@ export class LayoutComponent implements OnInit {
         return this.userInformationService.isUser();
     }
     getFullName() {
-         console.log(this.userInformationService.getFullName())
-        return this.userInformationService.getFullName();
+        //  console.log(this.userInformationService.getFullName())
+        // return this.userInformationService.getFullName();
+        return "Kiều Chí Công"
     }
     getUserName() {
 
-        return this.userInformationService.getUserName();
+        // return this.userInformationService.getUserName();
+        return "kieuchicong"
     }
 }
