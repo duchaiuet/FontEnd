@@ -1,0 +1,7 @@
+{
+    "/api":{
+        "target":"https://web1920.herokuapp.com",
+        "secure":"false",
+        "changOrigin":true
+    }
+}

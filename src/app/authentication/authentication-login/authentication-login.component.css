@@ -1,0 +1,23 @@
+
+      .login-form {
+        max-width: 300px;
+        position: relative;
+        left: 50px
+      }
+
+
+      .login-form-button {
+        width: 50%;
+      }
+      .login{
+         max-width: 400px;
+        background-color: white;
+        position: relative;
+        bottom: 10%;
+        left: 30%;
+        z-index : 1
+
+      }
+      #iconuet{
+        max-height: 75px
+      }

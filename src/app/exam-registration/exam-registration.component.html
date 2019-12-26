@@ -1,0 +1,70 @@
+
+<div>
+<nz-table nzTemplateMode >
+      <thead>
+        <tr>
+          <th>Số TT</th>
+          <th>Môn thi </th>
+          <th>Phòng thi</th>
+          <th>Ngày thi </th>
+          <th>Giờ bắt đầu-Giờ kết thúc </th>
+          <th>Số lượng(3/100) </th>
+         
+      
+          <th>Chức năng </th>
+         
+        </tr>
+      </thead>
+      <tbody>
+          
+        <tr *ngFor="let data of listOfData; index as i">
+            <td>{{ i+1}}</td>
+          <td>{{ data.subject_id.name }}</td>
+          <td>{{ data.room_id}}</td>
+          <td>{{ data.day}}</td>
+          <td>{{  data.time_start +'-'+ data.time_end}}</td>
+          <td>{{ data.no_of_student}}</td>
+      
+      
+         
+          <td *ngIf="data.status">
+            <button nz-button [nzSize]="size" nzType="primary" (click)="register(i)"  [nzLoading]="data.isLoading">Đăng kí </button>
+            
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+   
+<div>
+        <nz-table nzTemplateMode #basicTable >
+              <thead>
+                <tr>
+                  <th>Môn thi </th>
+                  <th>Ca thi</th>
+                  <th>Phòng thi</th>
+                  <th>Ngày thi </th>
+                  <th>Giờ bắt đầu-Giờ kết thúc </th>
+                 
+                 
+              
+                  <th>Chức năng </th>
+                 
+                </tr>
+              </thead>
+              <tbody>
+                  
+                  <tr *ngFor="let data of yourSchedule;index as i">
+                      <td>{{ i+1}}</td>
+                      <td>{{ data.name }}</td>
+                      <td>{{ data.subject_id.name }}</td>
+                      <td>{{ data.room_id}}</td>
+                      <td>{{ data.day}}</td>
+                      <td>{{ data.time_start +'-'+ data.time_end}}</td>
+                      <td >
+                        <button nz-button [nzSize]="size" nzType="primary" (click)="deleteShift(i)"  [nzLoading]="data.isLoading">Hủy </button>
+                         <button nz-button [nzSize]="size" nzType="primary" (click)="print(i)"  [nzLoading]="data.isLoading">In </button>
+                      </td>
+              </tbody>
+            </nz-table>
+          </div>
