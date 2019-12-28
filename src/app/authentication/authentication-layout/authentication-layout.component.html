@@ -1,40 +1,44 @@
 <nz-layout style="overflow: hidden">
-  <nz-header>
+  <!-- <nz-header>
     <div class="logo">
       <img id="iconuet" src="/assets/icon.png"
         alt="Trường Đại học Công nghệ, ĐHQGHN - VNU- University of Engineering and Technology" />
     </div>
 
     <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
-      <li nz-menu-item>Đăng kí</li>
       <button style="border: none" nz-menu-item nzSelected (click)="moveToLogin()">
         Đăng nhập
       </button>
     </ul>
-  </nz-header>
+  </nz-header> -->
 
-  <nz-content>  
-    
-    <div *ngIf="onlyView">
+  <nz-content >
+
+    <!-- <div *ngIf="onlyView">
       <div style=" position:absolute;z-index: 10;width: 100%; background: black;opacity: 0.5;">
           <div style="font-size: 2em;color: white; text-align: center;">
               Chào mừng bạn đến với hệ thống quản lý và đăng ký thi
             </div>
+
+      
       </div>
+
       <slideshow [height]="'470px'" [minHeight]="'470px'" [autoPlay]="true" [showArrows]="true"
         [imageUrls]="imageSlides" [lazyLoad]="imageSources?.length > 1" [autoPlayWaitForLazyLoad]="true">
+       
       </slideshow>
-    </div>
-    
+      
+    </div> -->
+      <app-authentication-login></app-authentication-login>
     <router-outlet></router-outlet>
   </nz-content>
 
-  <nz-footer>
+  <!-- <nz-footer>
     <div class="row footer-content" data-selected="true" data-label-id="0">
       <div class="copyright col-md-6">
-        © 2019 Trường Đại học Công nghệ, Đại học Quốc Gia Hà Nội
         <p>
-          Địa chỉ: E3, 144 Xuân Thủy, Cầu Giấy, Hà Nội<br />
+          © 2019 Trường Đại học Công nghệ, Đại học Quốc Gia Hà Nội
+          Địa chỉ: E3, 144 Xuân Thủy, Cầu Giấy, Hà Nội
           Điện thoại: 024.37547.461; Fax: 024.37547.460; Email: uet@vnu.edu.vn
         </p>
       </div>
@@ -42,5 +46,5 @@
         <ul class="list-inline pull-right social-list"></ul>
       </nav>
     </div>
-  </nz-footer>
+  </nz-footer> -->
 </nz-layout>

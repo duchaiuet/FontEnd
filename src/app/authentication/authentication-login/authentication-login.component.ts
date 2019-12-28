@@ -18,19 +18,19 @@ export class AuthenticationLoginComponent implements OnInit {
     }
 
     submitForm(): void {
-        for (const i in this.validateForm.controls) {
-            this.validateForm.controls[i].markAsDirty();
-            this.validateForm.controls[i].updateValueAndValidity();
-        }
-        const user = this.validateForm.getRawValue();
-        this.http.post('api/authentication', {username: user.userName, password: user.password}).subscribe((res: any) => {
-
-            if (res.success == true) {
-                localStorage.setItem('user', JSON.stringify((res)));
-                this.router.navigate(['/dashboard']);
-                console.log(res);
-            }
-        });
+        // for (const i in this.validateForm.controls) {
+        //     this.validateForm.controls[i].markAsDirty();
+        //     this.validateForm.controls[i].updateValueAndValidity();
+        // }
+        // const user = this.validateForm.getRawValue();
+        // this.http.post('api/authentication', {username: user.userName, password: user.password}).subscribe((res: any) => {
+        //     if (res.success == true) {
+        //         localStorage.setItem('user', JSON.stringify((res)));
+        //         this.router.navigate(['/dashboard']);
+        //         console.log(res);
+        //     }
+        // });
+        this.router.navigate(['/dashboard']);
     }
 
 
