@@ -10,10 +10,19 @@ export class AuthenticationLayoutComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  public onlyView= true;
   ngOnInit() {
   }
+  imageSlides = [
+    'assets/1.jpg',
+    'assets/6.jpg',
+    'assets/3.jpg',
+    'assets/4.jpg',
+    'assets/book-791884_1920.jpg'
+  ]
 
-  moveToLogin(){
+  moveToLogin() {
+    this.onlyView = false;
     this.router.navigateByUrl('/welcome/login')
   }
 

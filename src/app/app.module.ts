@@ -30,6 +30,7 @@ import {UserInformationService} from './services/user-information.service';
 import {NzTabsModule} from 'ng-zorro-antd/tabs';
 import {AdminModule} from './admin/admin.module';
 import {StudentModule} from './student/student.module';
+import {SlideshowModule} from 'ng-simple-slideshow';
 
 registerLocaleData(en);
 
@@ -62,7 +63,8 @@ registerLocaleData(en);
         NzDatePickerModule,
         NzTabsModule,
         AdminModule,
-        StudentModule
+        StudentModule,
+        SlideshowModule,
     ],
     providers: [{
         provide: NZ_I18N,
