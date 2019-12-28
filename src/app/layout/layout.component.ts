@@ -16,6 +16,15 @@ export class LayoutComponent implements OnInit {
     ngOnInit() {
     }
 
+    getTitlePage(){
+        if(this.isAdmin()){
+            return "trang quản trị viên "
+        }
+        if(this.isUser()){
+            return "trang quản lý thi "
+        }
+    }
+
     changePassword() {
         this.isVisible = true;
     }

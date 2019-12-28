@@ -1,9 +1,10 @@
 <nz-layout>
   <nz-header>
     <div class="logo"></div>
+    <!-- <img style="width:60px; height:60px" src="/assets/icon.png" alt=""> -->
+    <div style="text-transform: uppercase; font-size: 2em; color:whitesmoke; display: inline-block; width: auto">{{getTitlePage()}}</div>
     <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
-   
-      <li nz-menu-item ><button nz-button nzType="primary" nz-dropdown [nzDropdownMenu]="menu" >Xin chào {{getFullName()}} [{{getUserName()}}]  <i nz-icon nzType="down"></i></button>
+      <li><button nz-button nzType="primary" nz-dropdown [nzDropdownMenu]="menu" >Xin chào {{getFullName()}}<i nz-icon nzType="down"></i></button>
         <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu>
             <li nz-menu-item (click)=changePassword()>Thay đổi mật khẩu</li>
@@ -21,6 +22,8 @@
     <nz-layout>
       <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzBreakpoint]="'lg'" [nzCollapsedWidth]="0"
         [nzZeroTrigger]="zeroTrigger">
+   
+        
 
         <ul  nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
 
