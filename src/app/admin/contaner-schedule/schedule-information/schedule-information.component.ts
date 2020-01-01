@@ -42,7 +42,7 @@ export class ScheduleInformationComponent implements OnInit {
         this.listRoom.forEach(value => {
             if (value.id == data) {
                 this.shift.max_student = value.max_student;
-                this.shift.room = value.name+'-'+value.location
+                this.shift.room = value.name;
             }
         });
 

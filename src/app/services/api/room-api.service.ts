@@ -8,7 +8,7 @@ export class RoomApiService {
     url: string;
 
     constructor(private http: HttpClient) {
-        this.url = '/api/rooms/';
+        this.url = '/api/rooms';
     }
 
 

@@ -23,7 +23,7 @@ export class AuthenticationLoginComponent implements OnInit {
         //     this.validateForm.controls[i].updateValueAndValidity();
         // }
         // const user = this.validateForm.getRawValue();
-        // this.http.post('api/authentication', {username: user.userName, password: user.password}).subscribe((res: any) => {
+        // this.http.post('http://192.168.0.101:5000/api/authentication', {username: user.userName, password: user.password}).subscribe((res: any) => {
         //     if (res.success == true) {
         //         localStorage.setItem('user', JSON.stringify((res)));
         //         this.router.navigate(['/dashboard']);

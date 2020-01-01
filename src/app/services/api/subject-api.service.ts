@@ -8,7 +8,7 @@ export class SubjectApiService {
     url: string;
 
     constructor(private http: HttpClient) {
-        this.url = '/api/subjects/';
+        this.url = 'http://192.168.0.101:5000/api/subjects';
     }
 
     getListSubject(subjectName): Promise<any> {
@@ -21,11 +21,11 @@ export class SubjectApiService {
     }
 
     editSubject(data: any) {
-        return this.http.put(this.url + data.id, data).toPromise().then().catch();
+        return this.http.put(this.url +"/"+ data.id, data).toPromise().then().catch();
     }
 
     deleteSubject(id): Promise<any> {
-        return this.http.delete(this.url + id).toPromise().then().catch();
+        return this.http.delete(this.url +"/"+ id).toPromise().then().catch();
     }
 
 

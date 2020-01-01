@@ -88,8 +88,6 @@ export class ListScheduleComponent implements OnInit {
         }).then((value: any) => {
             if (value.success == true) {
                 this.listOfData = value.schedules;
-
-
             } else {
                 confirm(value.message);
             }
@@ -103,9 +101,9 @@ export class ListScheduleComponent implements OnInit {
         this.title = 'Sửa ca thi';
         this.schedule = Object.assign({}, this.listOfData[i]);
 
-        this.schedule.end_time = new Date('1995-12-17T' + this.schedule.end_time);
+        this.schedule.time_end = new Date('1995-12-17T' + this.schedule.time_end);
 
-        this.schedule.start_time = new Date('1995-12-17T' + this.schedule.start_time);
+        this.schedule.time_start = new Date('1995-12-17T' + this.schedule.time_start);
 
 
         this.isVisible = true;
@@ -142,9 +140,9 @@ export class ListScheduleComponent implements OnInit {
                     this.listOfData.push(data);
                     console.log(data);
                     this.schedule = {};
+                    data.time_start = data.start_time.toTimeString().slice(0, 5);
+                    data.time_end = data.end_time.toTimeString().slice(0, 5);
                     confirm(value.message);
-
-
                 } else {
                     confirm(value.message);
                 }
@@ -153,13 +151,11 @@ export class ListScheduleComponent implements OnInit {
             this.scheduleAPi.editSchedule(this.schedule).then((value: any) => {
                 if (value.success == true) {
                     this.isVisible = false;
-
-
                     let dta = Object.assign({}, this.schedule);
                     console.log((dta));
                     this.schedule = {};
-                    dta.start_time = dta.start_time.toTimeString().slice(0, 5);
-                    dta.end_time = dta.end_time.toTimeString().slice(0, 5);
+                    dta.time_start = dta.time_start.toTimeString().slice(0, 5);
+                    dta.time_end = dta.time_end.toTimeString().slice(0, 5);
                     this.listOfData[this.index] = dta;
                     confirm(value.message);
 

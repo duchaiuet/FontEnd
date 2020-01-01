@@ -8,7 +8,7 @@ export class UserSubjectApiService {
     private url: string;
 
     constructor(private  http: HttpClient) {
-        this.url = '/api/subjects/user';
+        this.url = '/api/exams/students';
     }
 
     getUserInSubject(data:any): Promise<any> {

@@ -8,7 +8,7 @@ export class UserApiService {
     private url: string;
 
     constructor(private http: HttpClient) {
-        this.url = '/api/users';
+        this.url = 'http://192.168.0.101:5000/api/users';
     }
 
     searchUser(data): Promise<any> {
@@ -30,18 +30,18 @@ export class UserApiService {
 
     editUser(data: any): Promise<any> {
         console.log(data, 123213);
-        return this.http.put(this.url + data.id, data).toPromise().then()
+        return this.http.put(this.url +"/"+ data.id, data).toPromise().then()
             .catch();
     }
 
     changePasswordUser(data): Promise<any> {
         console.log('pacth');
-        return this.http.patch(this.url + data.id, data).toPromise().then()
+        return this.http.patch(this.url +"/"+ data.id, data).toPromise().then()
             .catch();
     }
 
     deleteUser(id): Promise<any> {
-        return this.http.delete(this.url + id).toPromise().then()
+        return this.http.delete(this.url +"/"+ id).toPromise().then()
             .catch();
     }
 

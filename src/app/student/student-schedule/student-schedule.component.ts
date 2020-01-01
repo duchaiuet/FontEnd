@@ -25,27 +25,8 @@ export class StudentScheduleComponent implements OnInit {
         let schedule = [];
         let yourSchedule = [];
         this.registerApi.getListCanRegister('').then((res: any) => {
-            res.schedule.forEach(value => {
-
-                value.shift.forEach(val => {
-                    console.log(val);
-                    schedule.push({
-                        id: value.id,
-                        subject_id: value.subject_id,
-                        schedule_id: val.id,
-                        room_id: val.room_id.name + '-' + val.room_id.location,
-                        day: val.day,
-                        time_start: val.time_start.slice(0, 5),
-                        time_end: val.time_start.slice(0, 5),
-                        no_of_student: val.no_of_student,
-                        max_student: val.room_id.max_student,
-                        isLoading: false,
-                        status: !value.status
-                    });
-
-                    this.listOfData = schedule;
-                });
-            });
+           this.listOfData = res.data;
+           console.log(res.data)
         });
         this.getMySchedule();
 
@@ -94,9 +75,6 @@ export class StudentScheduleComponent implements OnInit {
 
     }
 
-    printRegistion() {
-        // this.pdf.printRegister(this.yourSchedule);
-    }
 
 
 }

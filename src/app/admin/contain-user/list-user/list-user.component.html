@@ -1,10 +1,10 @@
 <div>
-    <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+    <!-- <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
         <input [(ngModel)]="code" (ngModelChange)="getListUser()" type="text" nz-input placeholder="input search text"/>
     </nz-input-group>
     <ng-template #suffixButton>
         <button nz-button nzType="primary" nzSize="large" nzSearch>Search</button>
-    </ng-template>
+    </ng-template> -->
     <nz-table #basicTable [nzData]="listOfData">
         <thead>
         <tr>
@@ -20,14 +20,8 @@
             <td>{{ data.code }}</td>
             <td>{{ data.full_name }}</td>
             <td>{{ data.username }}</td>
-
-
             <td>
                 <a (click)="showModal(i)">Update</a>
-                <a (click)="showModalChangePassword(i)">Sửa mật khẩu</a>
-                <!--                <a>Delete</a>-->
-                <!--                a (click)="showModal(data)">Update</a>-->
-
                 <a (click)="deleteUser(i)"> Delete</a>
 
             </td>

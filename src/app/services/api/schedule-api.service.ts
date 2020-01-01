@@ -8,7 +8,7 @@ export class ScheduleApiService {
     url: string;
 
     constructor(private  http: HttpClient) {
-        this.url = '/api/schedules/';
+        this.url = '/api/schedules';
     }
 
     createSchdedule(data: any): Promise<any> {
@@ -33,10 +33,10 @@ export class ScheduleApiService {
         dta.start_time = dta.start_time.toTimeString().slice(0, 5);
         dta.end_time = dta.end_time.toTimeString().slice(0, 5);
 
-        return this.http.put(this.url + data.id, dta).toPromise().then().catch();
+        return this.http.put(this.url +"/"+ data.id, dta).toPromise().then().catch();
     }
 
     deleteSchedule(id): Promise<any> {
-        return this.http.delete(this.url + id).toPromise().then().catch();
+        return this.http.delete(this.url +"/"+ id).toPromise().then().catch();
     }
 }

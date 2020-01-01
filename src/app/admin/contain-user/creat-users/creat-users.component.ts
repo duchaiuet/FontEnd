@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {User} from '../../../interface/user';
-import {ExcelProssingService} from '../../../excel-prossing.service';
-import {UserApiService} from '../../../services/api/user-api.service';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { User } from '../../../interface/user';
+import { ExcelProssingService } from '../../../excel-prossing.service';
+import { UserApiService } from '../../../services/api/user-api.service';
 
 @Component({
     selector: 'app-creat-users',
@@ -24,19 +24,14 @@ export class CreatUsersComponent implements OnInit {
 
     updateAllChecked() {
         this.listUser.forEach(value => {
-
-            if (this.allChecked == true) {
-                this.useApi.createUser(value).then((val: any) => {
-                    if (val.success == true) {
-                        value.isCheck = this.allChecked;
-                        value.isRegisterComplete = true;
-                    } else {
-                        value.isRegisterComplete = false;
-                        value.message = JSON.stringify(val.message);
-                    }
-                });
-            }
-
+            this.useApi.createUser(value).then((val: any) => {
+                if (val.success == true) {
+                    value.isRegisterComplete = true;
+                } else {
+                    value.isRegisterComplete = false;
+                    value.message = JSON.stringify(val.message);
+                }
+            });
         });
     }
 
@@ -62,7 +57,7 @@ export class CreatUsersComponent implements OnInit {
     }
 
     onFileChange($event) {
-        const target: DataTransfer = <DataTransfer> ($event.target);
+        const target: DataTransfer = <DataTransfer>($event.target);
         console.log($event.srcElement.files);
         var reader = new FileReader();
         reader.readAsBinaryString($event.target.files[0]);
@@ -78,7 +73,7 @@ export class CreatUsersComponent implements OnInit {
     coverArray(data: Array<any>) {
         data.forEach((value: any, index) => {
             if (index > 0) {
-                let user: User = {code: value[1], username: value[2], password: value[3], full_name: value[4]};
+                let user: User = { code: value[1], username: value[2], password: value[3], full_name: value[4] };
                 this.listUser.push(user);
             }
         });

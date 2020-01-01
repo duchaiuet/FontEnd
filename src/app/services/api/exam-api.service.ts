@@ -8,7 +8,7 @@ export class ExamApiService {
     url: string;
 
     constructor(private  http: HttpClient) {
-        this.url = '/api/exams/';
+        this.url = 'http://192.168.0.101:5000/api/exams';
     }
 
     creatExam(data): Promise<any> {
@@ -21,11 +21,11 @@ export class ExamApiService {
     }
 
     editExam(data: any): Promise<any> {
-        return this.http.put(this.url + data.id, data).toPromise().then().catch();
+        return this.http.put(this.url +"/"+ data.id, data).toPromise().then().catch();
     }
 
     deleteExam(id): Promise<any> {
-        return this.http.delete(this.url + id).toPromise().then().catch();
+        return this.http.delete(this.url +"/"+ id).toPromise().then().catch();
     }
 }
 

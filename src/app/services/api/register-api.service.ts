@@ -8,7 +8,7 @@ export class RegisterApiService {
     url: string;
 
     constructor(private http: HttpClient) {
-        this.url = 'api/exam-resgister/';
+        this.url = 'api/student/schedules';
     }
 
     getListCanRegister(param) {
@@ -24,6 +24,6 @@ export class RegisterApiService {
     }
 
     deleteSchedule(id) {
-        return this.http.delete(this.url + id).toPromise().then().catch();
+        return this.http.delete(this.url +"/"+ id).toPromise().then().catch();
     }
 }

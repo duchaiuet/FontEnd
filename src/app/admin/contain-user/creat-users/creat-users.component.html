@@ -2,21 +2,22 @@
     <nz-input-group nzSize="large">
         <input type="file" (change)=onFileChange($event)/>
     </nz-input-group>
+    <hr>
     <nz-table #basicTable>
         <thead>
         <tr>
 
-            <th>
+            <!-- <th>
                 <label
                         nz-checkbox
                         [(ngModel)]="allChecked"
-                        (ngModelChange)="updateAllChecked()"
+                        
                         [nzIndeterminate]="indeterminate"
                 >
                     Check all
                 </label>
 
-            </th>
+            </th> -->
             <th>Mã</th>
             <th>Họ và tên</th>
             <th>Tài khoản</th>
@@ -26,8 +27,8 @@
         </thead>
         <tbody>
         <tr *ngFor="let data of listUser;index as i">
-            <td><label nz-checkbox [(ngModel)]="data.isCheck"
-                       (ngModelChange)="updateSingleChecked(i)"></label></td>
+            <!-- <td><label nz-checkbox [(ngModel)]="data.isCheck"
+                       (ngModelChange)="updateSingleChecked(i)"></label></td> -->
             <td>{{ data.code }}</td>
             <td>{{ data.full_name }}</td>
             <td>{{ data.username }}</td>
@@ -44,7 +45,7 @@
         </tbody>
     </nz-table>
 </div>
-
+<button nz-button (click)="updateAllChecked()" nzType="primary">Thêm</button>
 
 
 

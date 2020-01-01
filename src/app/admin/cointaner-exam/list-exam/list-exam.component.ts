@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {Exam} from '../../../interface/exam';
-import {HttpClient} from '@angular/common/http';
-import {ExamApiService} from '../../../services/api/exam-api.service';
+import { Component, OnInit } from '@angular/core';
+import { Exam } from '../../../interface/exam';
+import { HttpClient } from '@angular/common/http';
+import { ExamApiService } from '../../../services/api/exam-api.service';
 
 @Component({
     selector: 'app-list-exam',
@@ -15,7 +15,7 @@ export class ListExamComponent implements OnInit {
     examName = '';
 
     constructor(private examApi: ExamApiService, private http: HttpClient) {
-        this.exam = {name: '', status: true};
+        this.exam = { name: '', status: true };
     }
 
     ngOnInit() {
@@ -45,11 +45,12 @@ export class ListExamComponent implements OnInit {
             if (value.success = true) {
                 let data = Object.assign({}, this.exam);
                 data.id = value.exam_id;
-                this.exam = {name: '', status: true};
+                this.exam = { name: '', status: true };
                 this.listExam.push(data);
             } else {
                 confirm(value.message);
             }
+            console.log("cc")
         });
 
     }
@@ -72,6 +73,7 @@ export class ListExamComponent implements OnInit {
     }
 
     editExam(index) {
+        this.isVisible = true;
         this.listExam[index].isEdit = true;
 
     }
